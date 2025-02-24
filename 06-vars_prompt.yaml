@@ -5,10 +5,10 @@
     prompt: "please enter your course name"
   - name: "DURATION"
     prompt: "please enter the duration of course"
-  - name: "TRAINER NAME"
+  - name: "TRAINER"
     prompt: "please enter tht trainer naame"
   tasks:
   - name: printing the course information
     ansible.builtin.debug:
-      msg: " hii, i am learning {{COURSE}} with a duration of {{DURATION}}. trainer name is {{TRAINER NAME}} "
+      msg: " hii, i am learning {{COURSE}} with a duration of {{DURATION}}. trainer name is {{TRAINER}} "
 
