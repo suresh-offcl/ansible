@@ -1,0 +1,14 @@
+- name: "acsessing variables from files"
+  hosts: web
+  vars_files:
+  - vars.yaml
+  tasks: 
+  - name: printing course information 
+    ansible.builtin.debug:
+    msg: "hii, i am learing {{course}} with a duration 0f {{duration}}. trainer is {{trainer}}"
+  
+  - name:  printing course information again
+    vars:
+      course: "ansible"
+    ansible.builtin.debug:
+    msg: "hii, i am learing {{course}} with a duration 0f {{duration}}. trainer is {{trainer}}"
