@@ -5,9 +5,9 @@
     ansible.builtin.debug:
     msg: "THIS IS FROM PLAY-01 AND TASK -01"
 
-  - name: PLAY-2
-    hosts: web
-    tasks:
-    - name: PLAY-02 TASK -01
-      ansible.builtin.debug:
-      msg: "THIS IS FROM PLAY-02 AND TASK -01"
+- name: PLAY-02
+  hosts: web
+  tasks:
+  - name: PLAY-02 TASK -01
+    ansible.builtin.debug:
+    msg: "THIS IS FROM PLAY-02 AND TASK -01"
