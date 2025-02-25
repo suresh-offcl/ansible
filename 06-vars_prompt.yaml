@@ -12,6 +12,6 @@
     private: false
   
   tasks:
-    - name: printing variables from prompt
-      ansible.builtin.debug:
-      msg: "hii, iam learning {{course}} with a duration of {{duration}}. trainer name is {{trainer_name}}"
+  - name: printing variables from prompt
+    ansible.builtin.debug:
+    msg: "hii, iam learning {{course}} with a duration of {{duration}}. trainer name is {{trainer_name}}"
