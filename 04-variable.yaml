@@ -1,11 +1,11 @@
-- name: "using variables"
+- name: launching the variables
   hosts: web
   vars:
-    course_name: "devops with aws"
-    duration: "120-hrs"
-    trainer: "P.suresh gopi"
-  tasks:
-  - name: using variables
-    ansible.builtin.debug:
-      msg: "hii i am learing {{course_name}} with duration of {{duration}}, trainer is {{trainer}}"
+    course: "devops with aws"
+    duration: "140hrs"
+    trainer_name: "p.suresh gopi"
+  tasks: 
+    - name: "printing the course information"
+      ansible.builtin.debug:
+      msg: "course is {{course}} with a duration of {{duration}} , trainer name is {{trainer_name}}"
     
