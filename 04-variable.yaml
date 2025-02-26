@@ -5,7 +5,7 @@
     duration: "140hrs"
     trainer_name: "p.suresh gopi"
   tasks: 
-    - name: "printing the course information"
-      ansible.builtin.debug:
+  - name: "printing the course information"
+    ansible.builtin.debug:
       msg: "course is {{course}} with a duration of {{duration}} , trainer name is {{trainer_name}}"
     
