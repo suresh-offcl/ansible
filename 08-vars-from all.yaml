@@ -7,13 +7,15 @@
     DURATION: 150hrs 
     TRAINER: P.Suresh Gopi
   vars_prompt:
-    COURSE: "ENTER THE COURSE NAME"
-    private: false
-    DURATION: "ENTER THE DURATION OF COURSE"
-    private: false
-    TRAINER: "ENTER THE TRAINER NAME"
-    private: false
-
+    -name:
+     prompt: "ENTER THE COURSE NAME"
+     private: false
+    -name:
+     prompt: "ENTER THE DURATION OF COURSE"
+     private: false
+    -name:
+     prompt: "ENTER THE TRAINER NAME"
+     private: false
   tasks:
   - name: vars from args,tasks,prompt,play,inv,files
     COURSE: backend technologies from task files
