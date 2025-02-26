@@ -17,7 +17,7 @@
       prompt: "ENTER THE TRAINER NAME"
       private: false
   tasks:
-  - name: vars from args,tasks,prompt,play,inv,files
+  - name: #vars from args,tasks,prompt,play,inv,files
     COURSE: "backend technologies from task files"
     DURATION: "150hrs"
     TRAINER: "P.Suresh Gopi"
