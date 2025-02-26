@@ -20,8 +20,9 @@
   
   tasks:
   - name: "vars from args,tasks,prompt,play,inv,files"
-    COURSE: "backend technologies from task files"
-    DURATION: "150hrs"
-    TRAINER: "P.Suresh Gopi"
-    ansible.builtin.debug:
-      msg: "hii, i am learning {{COURSE}} with a duration of {{DURATION}}, Trainer name is {{TRAINER}}"
+    vars:
+      COURSE: "backend technologies from task files"
+      DURATION: "150hrs"
+      TRAINER: "P.Suresh Gopi"
+      ansible.builtin.debug:
+        msg: "hii, i am learning {{COURSE}} with a duration of {{DURATION}}, Trainer name is {{TRAINER}}"
