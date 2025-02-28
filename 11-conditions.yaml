@@ -1,0 +1,11 @@
+- name:
+  hosts: web
+  become: yes
+  tasks:
+  - name:
+    ansible.builtin.command: id expense
+    register: user
+
+  - name:
+    ansible.builtin.debug:
+      msg: "user"
