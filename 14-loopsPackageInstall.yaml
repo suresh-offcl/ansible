@@ -1,4 +1,4 @@
-- name: installing packages from loops
+- name: loops demo
   hosts: web
   become: yes
   tasks:
