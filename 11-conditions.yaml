@@ -8,5 +8,9 @@
     ignore_errors: True
 
   - name:
+    ansible.builtin.command: useradd expense
+    when: user.rc != 0
+
+  - name:
     ansible.builtin.debug:
       msg: "{{user}}"
