@@ -9,3 +9,6 @@
     loop:
     - mysql
     - git
+    - postfix
+    - nginx
+    - httpd
