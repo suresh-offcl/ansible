@@ -1,5 +1,6 @@
 - name: datatypes
   hosts: local
+  connection: local
   vars:
     course: "devops"
     duration: "120hrs"
