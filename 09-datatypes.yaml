@@ -1,0 +1,25 @@
+- name: datatypes
+  hosts: web
+  vars:
+    course: "devops"
+    duration: "120hrs"
+    trainer: "siva"
+    topics:
+    - linux
+    - shell
+    - ansible
+    - terrafom
+    - k8
+    - python
+    live: true
+    tools:
+      ci: jenkins
+      cm: ansible
+      cloud: aws
+      aws:
+      - iam
+      - s3
+  tasks:
+  - name:
+    ansible.builtin.debug:
+      msg: "hii, i am learing {{course}} with {{duration}} of duration , topics are {{topics}} and live: {{live}} , tools are {{tools}}"
