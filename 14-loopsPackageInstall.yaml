@@ -1,0 +1,12 @@
+- name: intalling packages from loops
+  hosts: local
+  connection: local
+  tasks:
+  - name:
+    ansible.builtin.package:
+      name: item
+      state: present
+      msg: " installing {{ item }} "
+    loop:
+    - mysql
+    - git
