@@ -1,13 +1,11 @@
 - name: intalling packages from loops
   hosts: web 
   become: yes
-
   tasks:
   - name:
     ansible.builtin.package:
-      name: "{{item}}"
+      name: "{{ item }}"
       state: present
-      msg: " installing {{ item }} "
     loop:
     - mysql
     - git
