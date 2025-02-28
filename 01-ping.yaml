@@ -1,5 +1,5 @@
 - name: ping the server
-  hosts: web
+  hosts: 54.165.63.135
   tasks: 
   - name: ping the server
     ansible.builtin.ping:
