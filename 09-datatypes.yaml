@@ -1,5 +1,5 @@
 - name: datatypes
-  hosts: web
+  hosts: local
   vars:
     course: "devops"
     duration: "120hrs"
