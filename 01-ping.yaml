@@ -1,5 +1,6 @@
 - name: ping the server
-  hosts: 54.165.63.135
+  # hosts: 54.165.63.135
+  hosts: localhost
   tasks: 
   - name: ping the server
     ansible.builtin.ping:
