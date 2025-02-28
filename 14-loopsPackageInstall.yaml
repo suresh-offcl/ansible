@@ -2,7 +2,7 @@
   hosts: web
   become: yes
   tasks:
-  - name:
+  - name: install packages
     ansible.builtin.package:
       name: "{{item.name}}"
       state: "{{item.state}}"
