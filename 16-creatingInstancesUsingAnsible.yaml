@@ -13,7 +13,7 @@
   tasks:
   - name: creating ec2_instances
     ansible.builtin.ec2_instance:
-      name: ""
+      name: "{{ item }}"
       vpc_subnet_id: "{{ subnet_id }}"
       instance_type: "{{ instances_type }}"
       security_group: "{{ sg_id }}"
