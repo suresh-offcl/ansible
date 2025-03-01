@@ -10,6 +10,7 @@
     - mysql
     - frontend
     - backend
+    zone: "khanishkcosmetics.store "
   tasks:
   - name: creating ec2_instances
     ansible.builtin.ec2_instance:
@@ -19,4 +20,16 @@
       security_group: "{{ sg_id }}"
       image_id: "{{ ami_id }}"
     loop: "{{ instances }}"
-    
+    register: ec2_instancees
+  
+  - name: creating route53 records
+    ansible.builtin.route53:
+      state: present
+      zone: "{{ zone }}"
+      record: "{{ item.item }}.{{ zone }}"
+      type: A
+      ttl: 1
+      value: "{{ item.instances[0].private_ip_address }}"
+      wait: true
+      overwrite: true
+    loop: "{{ec2_instancees}}"
