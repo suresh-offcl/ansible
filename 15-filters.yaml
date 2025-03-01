@@ -5,3 +5,8 @@
   - name:
     ansible.builtin.debug:
       msg: "course: {{ course | default('Ansible') }}"
+  
+  - name:
+    greetings: "hii ramesh"
+    ansible.builtin.debug:
+      msg: " greetings | upper "
