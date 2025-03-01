@@ -13,9 +13,9 @@
   tasks:
     - name: creating ec2_instances
       ansible.aws.ec2_instance:
-      name: "{{ item }}"
-      vpc_subnet_id: "{{ subnet_id }}"
-      instance_type: "{{ instances_type }}"
-      security_group: "{{ securitygroup_id }}"
-      image_id: "{{ img_id }}"
+        name: "{{ item }}"
+        vpc_subnet_id: "{{ subnet_id }}"
+        instance_type: "{{ instances_type }}"
+        security_group: "{{ securitygroup_id }}"
+        image_id: "{{ img_id }}"
       loop: "{{ instances }}"
