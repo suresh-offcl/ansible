@@ -29,7 +29,7 @@
       record: "{{ item.item }}.{{ zone }}"
       type: A
       ttl: 1
-      value: "{{ ec2_instancess.instances[0].private_ip_address }}"
+      value: "{{ item.instances[0].private_ip_address }}"
       wait: true 
       overwrite: true
     loop: "{{ ec2_instancess.results }}"
