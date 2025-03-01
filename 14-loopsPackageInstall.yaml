@@ -1,13 +1,17 @@
 - name: loops demo
   hosts: web
   become: yes
+  vars:
+    li: [
+      {name: 'nginx', state: 'absent'},
+      {name: 'mysql', state: 'absent'},
+      {name: 'postfix', state: 'absent'}
+    ]
   tasks:
   - name: install packages
     ansible.builtin.package:
       name: "{{item.name}}"
       state: "{{item.state}}"
-    loop:
-    - {name: 'nginx', state: 'absent'}
-    - {name: 'mysql', state: 'absent'}
-    - {name: 'postfix', state: 'absent'}
+    loop: li
+    
 
