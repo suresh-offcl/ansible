@@ -13,7 +13,7 @@
     zone: "khanishkcosmetics.store "
   tasks:
   - name: creating ec2_instances
-    amazon.builtin.ec2_instance:
+    ansible.builtin.ec2_instance:
       name: "{{ item }}"
       vpc_subnet_id: "{{ subnet_id }}"
       instance_type: "{{ instances_type }}"
@@ -23,7 +23,7 @@
     register: ec2_instancees
   
   - name: creating route53 records
-    amazon.builtin.route53:
+    ansible.builtin.route53:
       state: present
       zone: "{{ zone }}"
       record: "{{ item.item }}.{{ zone }}"
