@@ -7,9 +7,9 @@
     sg_id: "sg-0d53b673bc770d04c"
     ami_id: "ami-09c813fb71547fc4f"
     instances:
-    - mysql
-    - frontend
-    - backend
+    - mysqll
+    - frontendd
+    - backendd
   tasks:
   - name: creating ec2_instances
     ansible.builtin.ec2_instance:
