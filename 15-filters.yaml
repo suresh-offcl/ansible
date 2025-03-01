@@ -1,0 +1,7 @@
+- name:
+  hosts: local
+  connection: local
+  tasks:
+  - name:
+    ansible.builtin.debug:
+    msg: "course: {{ course | default('Ansible') }}"
