@@ -10,14 +10,14 @@
     - mysql
     - frontend
     - backend
-    zone: "khanishkcosmetics.store "
+    zone: "khanishkcosmetics.store"
   tasks:
   - name: creating ec2_instances
     amazon.aws.ec2_instance:
       name: "{{ item }}"
       vpc_subnet_id: "{{ subnet_id }}"
       instance_type: "{{ instances_type }}"
-      security_group: "{{ sg_id }}"
+      security_groups: "{{ sg_id }}"
       image_id: "{{ ami_id }}"
     loop: "{{ instances }}"
     register: ec2_instancees
