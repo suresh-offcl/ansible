@@ -6,12 +6,12 @@
     subnet_id: "subnet-082da38ee3dde10b0"
     instances_type: "t3.micro"
     amd_id: "ami-09c813fb71547fc4f"
-  instances:
-  - mysql
-  - frontend
-  - backend
-  ec2_inst:
-  - ansible-node
+    instances:
+    - mysql
+    - frontend
+    - backend
+    ec2_inst:
+    - ansible-node
   tasks:
   - name: creating ec2_instances
     amazon.aws.ec2_instance:
