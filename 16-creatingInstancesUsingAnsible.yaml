@@ -20,3 +20,7 @@
       image_id: "{{ amd_id }}"
     loop: "{{ instances }}"
     register: ec2_instances
+  
+  - name: printing the information
+    ansible.builtin.debug:
+      msg: "{{ ec2_instances }}"
