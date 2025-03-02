@@ -18,5 +18,5 @@
       instance_type: "{{ instance_type }}"
       security_group: "{{ securitygp_id }}"
       image_id: "{{ amd_id }}"
-    loop: instances
+    loop: "{{ instances }}"
     register: ec2_instances
