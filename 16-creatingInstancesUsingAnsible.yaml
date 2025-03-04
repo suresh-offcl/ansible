@@ -11,7 +11,7 @@
     - frontend
     - backend
     ec2_inst:
-    - ansible-node 
+    - ansible-node1 
     zone: "khanishkcosmetics.store"
   tasks:
   
