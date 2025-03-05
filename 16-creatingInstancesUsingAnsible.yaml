@@ -15,11 +15,7 @@
       - my13
       - my14
       - my15
-      - my16
-      - my17
-      - my189
-      - my199
-      - my100
+      
       
     ec2_inst:
     - ansible-node1 
