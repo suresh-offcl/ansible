@@ -7,9 +7,20 @@
     instances_type: "t3.micro"
     amd_id: "ami-09c813fb71547fc4f"
     instances:
-    - mysql
-    - frontend
-    - backend
+    # - mysql
+    # - frontend
+    # - backend
+      - my1
+      - my12
+      - my13
+      - my14
+      - my15
+      - my16
+      - my17
+      - my189
+      - my199
+      - my100
+      
     ec2_inst:
     - ansible-node1 
     zone: "khanishkcosmetics.store"
@@ -47,28 +58,28 @@
     ansible.builtin.debug:
       msg: "{{ ec2_instances }}"
   
-  - name: creating route53 private records
-    amazon.aws.route53:
-      state: present
-      zone: "{{ zone }}"
-      record: "{{ item.item }}.{{ zone }}"
-      type: A
-      ttl: 1
-      value: "{{ item.instances[0].private_ip_address }}"
-      wait: true
-      overwrite: true
-    loop: "{{ ec2_instances.results }}"
+  # - name: creating route53 private records
+  #   amazon.aws.route53:
+  #     state: present
+  #     zone: "{{ zone }}"
+  #     record: "{{ item.item }}.{{ zone }}"
+  #     type: A
+  #     ttl: 1
+  #     value: "{{ item.instances[0].private_ip_address }}"
+  #     wait: true
+  #     overwrite: true
+  #   loop: "{{ ec2_instances.results }}"
 
-  - name: creating route53 public records
-    amazon.aws.route53:
-      state: present
-      zone: "{{ zone }}"
-      record: "{{ zone }}"
-      type: A
-      ttl: 1
-      value: "{{ item.instances[0].public_ip_address }}"
-      wait: true
-      overwrite: true
-    loop: "{{ ec2_instances.results }}"
-    when: item.item == "frontend"
+  # - name: creating route53 public records
+  #   amazon.aws.route53:
+  #     state: present
+  #     zone: "{{ zone }}"
+  #     record: "{{ zone }}"
+  #     type: A
+  #     ttl: 1
+  #     value: "{{ item.instances[0].public_ip_address }}"
+  #     wait: true
+  #     overwrite: true
+  #   loop: "{{ ec2_instances.results }}"
+  #   when: item.item == "frontend"
   
