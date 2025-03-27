@@ -1,18 +1,21 @@
-- name: printing variables from prompt
+- name: "accessing variables from prompt"
   hosts: web
+  become: yes
   vars_prompt:
   - name: "course"
-    prompt: "enter your course name"
-    private: false
+    prompt: "enter the course name"
+    private : false
   - name: "duration"
-    prompt: "enter your course duration time"
+    prompt: "enter the duration time"
     private: false
-  - name: "trainer_names"
-    prompt: "enter your trainer name"
+  - name: "trainer_name"
+    prompt: "enter the trainer name"
     private: false
-  tasks:
-  - name: printing variables from prompt
-    ansible.builtin.debug:
-      msg: "hii, iam learning {{course}} with a duration of {{duration}}. trainer name is {{trainer_names}}"
 
-    
+  tasks:
+  - name: "accessing vars from prompt"
+    ansible.builtin.debug:
+      msg: "i am learning {{course}} with {{duration}} trainer_name is {{trainer_name}}"
+
+
+

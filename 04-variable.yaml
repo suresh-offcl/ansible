@@ -1,11 +1,15 @@
-- name: launching the variables
-  hosts: web
+- name : "using play level variable in tasks"
+  hosts:  web
+  become : yes
   vars:
-    course: "devops with aws"
-    duration: "140hrs"
-    trainer_name: "p.suresh gopi"
-  tasks: 
-  - name: "printing the course information"
+    course: "devops"
+    duration: "120hrs"
+    trainer_name: "suresh"
+  tasks:
+  - name: "using vriables"
     ansible.builtin.debug:
-      msg: "course is {{course}} with a duration of {{duration}} , trainer name is {{trainer_name}}"
-    
+      msg: "i am learing {{course}} with {{duration}} , trainer name is {{trainer_name}}"
+
+
+
+

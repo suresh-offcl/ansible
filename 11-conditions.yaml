@@ -2,15 +2,19 @@
   hosts: web
   become: yes
   tasks:
-  - name:
+  - name: "check user exists or not"
     ansible.builtin.command: id expense
     register: user
-    ignore_errors: True
+    ignore_errors: true
 
-  - name:
+  - name: "checking"
     ansible.builtin.command: useradd expense
     when: user.rc != 0
 
-  - name:
+  - name: "check"
     ansible.builtin.debug:
       msg: "{{user}}"
+
+
+
+      
