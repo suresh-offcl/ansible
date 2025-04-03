@@ -21,7 +21,7 @@
       state: present
     executable: pip3.9 
 
-
+  
   - name: creating ec2 instances
     amazon.aws.ec2_instance:
       name: "{{ item }}"
