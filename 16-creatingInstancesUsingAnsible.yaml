@@ -26,9 +26,8 @@
       name: "{{ item }}"
       instance_type: "t3.micro"
       security_group: "{{ sg_id }}"
+      vpc_subnet_id: "{{ subnet_id }}"
       image_id: "{{ amd_id }}"  
-      region: "us-east-1"
-      wait: yes
     loop: "{{ instances }}"
     register: ec2_info
 
