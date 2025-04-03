@@ -7,9 +7,9 @@
     instances_type: "t2.micro"
     amd_id: "ami-09c813fb71547fc4f"
     instances:
-      -mysql
-      -frontend
-      -backend
+      - mysql
+      - frontend
+      - backend
     zone: "khanishkcosmetics.store"
 
   tasks:
