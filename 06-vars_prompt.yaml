@@ -1,21 +1,18 @@
-- name: "accessing variables from prompt"
+- name:
   hosts: web
-  become: yes
   vars_prompt:
-  - name: "course"
+  - name: course
     prompt: "enter the course name"
-    private : false
-  - name: "duration"
+    private: false
+  - name: duration:
     prompt: "enter the duration time"
     private: false
-  - name: "trainer_name"
+  - name: trainer:
     prompt: "enter the trainer name"
     private: false
-
   tasks:
-  - name: "accessing vars from prompt"
+  - name:
     ansible.builtin.debug:
-      msg: "i am learning {{course}} with {{duration}} trainer_name is {{trainer_name}}"
-
+      msg: "{{ course }} {{ duraion }} {{ trainer }}"
 
 

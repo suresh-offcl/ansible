@@ -2,60 +2,52 @@
   hosts: local
   connection: local
   tasks:
-  - name:
+  - name: 
     ansible.builtin.debug:
-      msg: "course: {{ course | default('Ansible') }}"
+      msg: "course {{ course | default('ansible') }}"
   
-  - name:
+  - name: 
     vars:
-      greetings: "hii ramesh"
+      greetings: "hii khani"
     ansible.builtin.debug:
-      msg: " {{ greetings | upper }} "
-
-  - name:
+      msg: "{{ greetings | uppper }}"
+  
+  - name: 
     vars:
-      greetings: "hii ramesh"
+      greetings: "hii khani"
     ansible.builtin.debug:
       msg: "{{ greetings | lower }}"
+
+  - name:
+    vars:
+      list: [1,2,3,4,4,3,2,1]
+    ansible.builtin.debug:
+      msg: "{{ list | unique }}"
   
   - name:
     vars:
-      numberss: [1,2,3,4,5,1,3,5,6]
+      list: [1,2,3,4,4,3,2,1]
     ansible.builtin.debug:
-      msg: "{{ numberss | unique }}"
+      msg: "{{ list | max }}"
   
   - name:
     vars:
-      nums: [12,34,56,6,343,243,2,53,25,]
+      list: [1,2,3,4,4,3,2,1]
     ansible.builtin.debug:
-      msg: " {{ nums | min }} "
+      msg: "{{ list | min }}"
   
   - name:
     vars:
-      nums: [12,34,56,6,343,243,2,53,25,]
+      item:
+        course: "aws"
+        trainer: "siva"
+        duration: "120hrs"
     ansible.builtin.debug:
-      msg: " {{ nums | max }} "
-  
-  - name:
-    vars:
-      course:
-        name: "devops with aws"
-        duration: 120 
-        trainer: "suresh gopi .p"
-    ansible.builtin.debug:
-      msg: "{{ course | dict2items }}"
+      msg: "{{ item | dict2items }}"
 
   - name:
     vars:
       course:
-      - { "key": "name","value": "DevOps with AWS" }
-      - { "key": "duration","value": 120 }
-      - { "key": "trainer","value": "sivakumar reddy" }
+      - { "key": "name" , "value": "suresh" }
     ansible.builtin.debug:
       msg: "{{ course | items2dict }}"
-  
-  - name:
-    vars:
-      myip: "12.23.233.1"
-    ansible.builtin.debug:
-      msg: "{{ myip | ansible.utils.ipv4 }}"

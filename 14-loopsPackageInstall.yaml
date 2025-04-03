@@ -1,18 +1,10 @@
-- name: loops demo
+- name:
   hosts: web
-  become: yes
   tasks:
-  - name: "installing dependencies"
+  - name:
     ansible.builtin.package:
       name: "{{ item.name }}"
       state: "{{ item.state }}"
     loop:
-      - { name: "nginx" , state: "present" }
-      - { name: "mysql" , state: "present" }
-
-
-
-
-
-
-  
+      { name: "mysql" , state: "present" }
+      { name: "postfix" , state: "present" }

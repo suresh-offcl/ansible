@@ -14,7 +14,3 @@
   - name: "check"
     ansible.builtin.debug:
       msg: "{{user}}"
-
-
-
-      

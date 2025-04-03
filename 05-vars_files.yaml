@@ -1,24 +1,8 @@
-- name: accessing variables from varfiles
+- name: 
   hosts: web
-  become: yes
   vars_files:
-    vars.yaml
+  - vars.yaml
   tasks:
-  - name: "accessing variables from var_files"
+  - name:
     ansible.builtin.debug:
-      msg: "i am learning {{ course }} with {{ duration }}, trainer names is {{trainer_name}}"
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
+      msg: "{{ course }}, {{ duraion }}  {{ trainer }}"

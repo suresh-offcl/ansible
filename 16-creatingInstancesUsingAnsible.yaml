@@ -1,85 +1,264 @@
-- name: creating ec2_instances and route53 records
-  hosts: local
-  connection: local
+- name:
+  hosts: web
+  #connection: local
   vars:
     sg_id: "sg-0d53b673bc770d04c"
     subnet_id: "subnet-082da38ee3dde10b0"
     instances_type: "t2.micro"
     amd_id: "ami-09c813fb71547fc4f"
     instances:
-    # - mysql
-    # - frontend
-    # - backend
-      - my1
-      - my12
-      - my13
-      - my14
-      - my15
-      - my16
-      - my17
-      - my189
-      - my199
-      - my100
-      
-    ec2_inst:
-    - ansible-node1 
+      -mysql
+      -frontend
+      -backend
     zone: "khanishkcosmetics.store"
+
   tasks:
-  
-  - name: Install boto3 and botocore using pip
-    ansible.builtin.pip:
-      name:
-        - boto3
-        - botocore
-      state: present
-      executable: pip3.9
-
-
-  - name: creating ec2_instances
+  - name: creating ec2 instances
     amazon.aws.ec2_instance:
       name: "{{ item }}"
-      vpc_subnet_id: "{{ subnet_id }}"
-      instance_type: "{{ instances_type }}"
+      instance_type: "t3.micro"
       security_group: "{{ sg_id }}"
-      image_id: "{{ amd_id }}"
+      image_id: "{{ amd_id }}"  
+      region: "us-east-1"
+      wait: yes
     loop: "{{ instances }}"
-    register: ec2_instances 
-  
-  - name: creating ansible_ec2_instances
-    amazon.aws.ec2_instance:
-      name: "{{ item }}"
-      vpc_subnet_id: "{{ subnet_id }}"
-      instance_type: "{{ instances_type }}"
-      security_group: "{{ sg_id }}"
-      image_id: "{{ amd_id }}"
-    loop: "{{ ec2_inst }}"
+    register: ec2_info
 
-  - name: printing the information
-    ansible.builtin.debug:
-      msg: "{{ ec2_instances }}"
-  
-  # - name: creating route53 private records
-  #   amazon.aws.route53:
-  #     state: present
-  #     zone: "{{ zone }}"
-  #     record: "{{ item.item }}.{{ zone }}"
-  #     type: A
-  #     ttl: 1
-  #     value: "{{ item.instances[0].private_ip_address }}"
-  #     wait: true
-  #     overwrite: true
-  #   loop: "{{ ec2_instances.results }}"
 
-  # - name: creating route53 public records
-  #   amazon.aws.route53:
-  #     state: present
-  #     zone: "{{ zone }}"
-  #     record: "{{ zone }}"
-  #     type: A
-  #     ttl: 1
-  #     value: "{{ item.instances[0].public_ip_address }}"
-  #     wait: true
-  #     overwrite: true
-  #   loop: "{{ ec2_instances.results }}"
-  #   when: item.item == "frontend"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# - name: creating ec2_instances and route53 records
+#   hosts: local
+#   connection: local
+#   vars:
+#     sg_id: "sg-0d53b673bc770d04c"
+#     subnet_id: "subnet-082da38ee3dde10b0"
+#     instances_type: "t2.micro"
+#     amd_id: "ami-09c813fb71547fc4f"
+#     instances:
+#     # - mysql
+#     # - frontend
+#     # - backend
+#       - my1
+#       - my12
+#       - my13
+#       - my14
+#       - my15
+#       - my16
+#       - my17
+#       - my189
+#       - my199
+#       - my100
+      
+#     ec2_inst:
+#     - ansible-node1 
+#     zone: "khanishkcosmetics.store"
+#   tasks:
+  
+#   - name: Install boto3 and botocore using pip
+#     ansible.builtin.pip:
+#       name:
+#         - boto3
+#         - botocore
+#       state: present
+#       executable: pip3.9 
+
+
+#   - name: creating ec2_instances
+#     amazon.aws.ec2_instance:
+#       name: "{{ item }}"
+#       vpc_subnet_id: "{{ subnet_id }}"
+#       instance_type: "{{ instances_type }}"
+#       security_group: "{{ sg_id }}"
+#       image_id: "{{ amd_id }}"
+#     loop: "{{ instances }}"
+#     register: ec2_instances 
+  
+#   - name: creating ansible_ec2_instances
+#     amazon.aws.ec2_instance:
+#       name: "{{ item }}"
+#       vpc_subnet_id: "{{ subnet_id }}"
+#       instance_type: "{{ instances_type }}"
+#       security_group: "{{ sg_id }}"
+#       image_id: "{{ amd_id }}"
+#     loop: "{{ ec2_inst }}"
+
+#   - name: printing the information
+#     ansible.builtin.debug:
+#       msg: "{{ ec2_instances }}"
+  
+#   # - name: creating route53 private records
+#   #   amazon.aws.route53:
+#   #     state: present
+#   #     zone: "{{ zone }}"
+#   #     record: "{{ item.item }}.{{ zone }}"
+#   #     type: A
+#   #     ttl: 1
+#   #     value: "{{ item.instances[0].private_ip_address }}"
+#   #     wait: true
+#   #     overwrite: true
+#   #   loop: "{{ ec2_instances.results }}"
+
+#   # - name: creating route53 public records
+#   #   amazon.aws.route53:
+#   #     state: present
+#   #     zone: "{{ zone }}"
+#   #     record: "{{ zone }}"
+#   #     type: A
+#   #     ttl: 1
+#   #     value: "{{ item.instances[0].public_ip_address }}"
+#   #     wait: true
+#   #     overwrite: true
+#   #   loop: "{{ ec2_instances.results }}"
+#   #   when: item.item == "frontend"
   

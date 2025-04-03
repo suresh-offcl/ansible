@@ -1,4 +1,4 @@
-- name: datatypes
+- name:
   hosts: local
   connection: local
   vars:
@@ -6,21 +6,15 @@
     duration: "120hrs"
     trainer: "siva"
     topics:
-    - linux
-    - shell
     - ansible
-    - terrafom
-    - k8
-    - python
+    - nginx
+    - postfix
     live: true
     tools:
-      ci: jenkins
-      cm: ansible
-      cloud: aws
-      aws:
-      - iam
-      - s3
+      name: "suresh"
+      son: "khanishk"
+      wife: "hema"
   tasks:
   - name:
     ansible.builtin.debug:
-      msg: "hii, i am learing {{course}} with {{duration}} of duration , topics are {{topics}} and live: {{live}} , tools are {{tools}}"
+      msg: ""

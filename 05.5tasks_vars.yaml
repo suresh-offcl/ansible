@@ -8,3 +8,11 @@
   - name:
     ansible.builtin.debug:
       msg: "course is {{ course }} with {{ duraion }} duration , trainer {{ trainer }}"
+
+  - name:
+    vars:
+      course: "devops"
+      duration: "4hrs"
+      trainer: "siva"
+    ansible.builtin.debug:
+      msg: "course is {{ course }} with {{ duraion }} duration , trainer {{ trainer }}"
