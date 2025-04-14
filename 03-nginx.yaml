@@ -4,7 +4,7 @@
   - name:
     ansible.builtin.package:
       name: nginx
-      state: nginx
+      state: present
   
   - name:
     ansible.builtin.service:
