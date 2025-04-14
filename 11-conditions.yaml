@@ -12,7 +12,7 @@
   
   - name:
     ansible.builtin.debug: 
-    msg: "{{ user }}"
+      msg: "{{ user }}"
 
 
 
