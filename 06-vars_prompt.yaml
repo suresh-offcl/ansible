@@ -1,6 +1,6 @@
 - name: "vars_prompt"
   hosts: web
-  vars:
+  vars_prompt:
   - name: course
     prompt: "what is your course name"
     private: false
