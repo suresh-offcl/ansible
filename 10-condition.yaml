@@ -1,14 +1,13 @@
-- name:
-  hosts: local
-  connection: local
+- name: "test condition"
+  hosts: web
   vars:
-    number: 2
+  - number: 9
   tasks:
-  - name:
+  - name: "print number"
     ansible.builtin.debug:
-      msg: "print if number is less than 2"
-    when: number | int > 10
-  - name:
+      msg: " number is grater than 10 "
+    when: number | int > 10 
+  - name: "print number"
     ansible.builtin.debug:
-      msg: "print if number is less than 2"
+      msg: " number is less than 10 "
     when: number | int < 10
