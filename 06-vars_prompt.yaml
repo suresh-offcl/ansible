@@ -5,7 +5,7 @@
     prompt: "what is your course name"
     private: false
   - name: "durations"
-    prompt: "duration"
+    prompt: "durations"
     private: false
   - name: "trainer"
     prompt: "trainer name"
