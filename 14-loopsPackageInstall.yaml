@@ -1,5 +1,6 @@
 - name:
   hosts: web
+  become: yes
   tasks:
   - name:
     ansible.builtin.package:
