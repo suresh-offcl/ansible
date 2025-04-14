@@ -3,7 +3,7 @@
   tasks:
   - name:
     ansible.builtin.debug:
-      msg: "{{ ansible_facts }}""
+      msg: "{{ ansible_facts }}"
   - name:
     ansible.builtin.dnf:
       name: nginx
