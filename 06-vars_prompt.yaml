@@ -1,16 +1,16 @@
 - name: "vars_prompt"
   hosts: web
   vars:
-  - name: "course_name"
+  - name: "course"
     prompt: "what is your course name"
     private: false
   - name: "duration"
     prompt: "duration"
     private: false
-  - name: "trainer_name"
+  - name: "trainer"
     prompt: "trainer name"
     private: false
   tasks:
   - name: "printing the details"
     ansible.builtin.debug:
-      msg: "{{ course_name }}- {{ duration }} - {{ trainer_name }}"
+      msg: "{{ course }}- {{ duration }} - {{ trainer }}"
