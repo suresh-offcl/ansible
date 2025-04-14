@@ -7,7 +7,7 @@
   tasks:
   - name:
     ansible.builtin.debug:
-      msg: "course is {{ course }} with {{ duraion }} duration , trainer {{ trainer }}"
+      msg: "course is {{ course }} with {{ duration }} duration , trainer {{ trainer }}"
 
   - name:
     vars:
@@ -15,4 +15,4 @@
       duration: "4hrs"
       trainer: "siva"
     ansible.builtin.debug:
-      msg: "course is {{ course }} with {{ duraion }} duration , trainer {{ trainer }}"
+      msg: "course is {{ course }} with {{ duration }} duration , trainer {{ trainer }}"
