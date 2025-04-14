@@ -4,7 +4,7 @@
   - name: "course"
     prompt: "what is your course name"
     private: false
-  - name: "duration"
+  - name: "durations"
     prompt: "duration"
     private: false
   - name: "trainer"
@@ -13,4 +13,4 @@
   tasks:
   - name: "printing the details"
     ansible.builtin.debug:
-      msg: "{{ course }}- {{ duration }} - {{ trainer }}"
+      msg: "{{ course }}- {{ durations }} - {{ trainer }}"
