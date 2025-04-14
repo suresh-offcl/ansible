@@ -1,13 +1,13 @@
 - name: "vars_prompt"
   hosts: web
   vars:
-  - name: "course"
+  - name: course
     prompt: "what is your course name"
     private: false
-  - name: "durations"
+  - name: durations
     prompt: "durations"
     private: false
-  - name: "trainer"
+  - name: trainer
     prompt: "trainer name"
     private: false
   tasks:
