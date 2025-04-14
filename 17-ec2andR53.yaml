@@ -17,7 +17,7 @@ tasks:
     vpc_subnet_id: {{ subnetid }}
     instance_type: t3.micro
     security_group: "{{ sg_id }}"
-    image_id: "{{ ami_id }}
+    image_id: "{{ ami_id }}"
   loop: "{{ instances }}"
   register: ec2_instances
 
