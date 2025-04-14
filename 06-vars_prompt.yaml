@@ -1,10 +1,10 @@
 - name: "vars_prompt"
   hosts: all
   vars_prompt:
-    - name: "course"
-      prompt: "Enter course name"
-      private: false
+  - name: "course"
+    prompt: "Enter course name"
+    private: false
   tasks:
-    - name: "Print course {{ course }}"
+  - name: "Print course {{ course }}"
 
 
